@@ -80,29 +80,15 @@ class StressNotificationListener : NotificationListenerService() {
             val wl = pm.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "StressViber:Haptic")
             wl.acquire(10000L) // 8s pattern + safety
 
-            // --- 8s Granular "Breathing" Waveform ---
-            // Inhale (2.5s, 10%->50%): 10 steps of 250ms
-            // Pause (3s): 0%
-            // Exhale (2.5s, 50%->10%): 10 steps of 250ms
-            
-            val timings = longArrayOf(
-                250, 250, 250, 250, 250, 250, 250, 250, 250, 250, // Inhale
-                3000,                                             // Pause
-                250, 250, 250, 250, 250, 250, 250, 250, 250, 250  // Exhale
-            )
-            
-            val amplitudes = intArrayOf(
-                25, 36, 47, 58, 69, 80, 91, 102, 113, 127, // 10% -> 50%
-                0,                                        // Pause
-                127, 113, 102, 91, 80, 69, 58, 47, 36, 25  // 50% -> 10%
-            )
-
-            val effect = android.os.VibrationEffect.createWaveform(timings, amplitudes, -1)
-            val attrs = android.os.VibrationAttributes.Builder()
-                .setUsage(android.os.VibrationAttributes.USAGE_ALARM)
-                .build()
-
             if (vibrator.hasVibrator()) {
+                val settings = SettingsManager(applicationContext).getSettings()
+                val (timings, amplitudes) = SettingsManager.generateWaveform(settings)
+                
+                val effect = android.os.VibrationEffect.createWaveform(timings, amplitudes, -1)
+                val attrs = android.os.VibrationAttributes.Builder()
+                    .setUsage(android.os.VibrationAttributes.USAGE_ALARM)
+                    .build()
+
                 vibrator.vibrate(effect, attrs)
             }
         } catch (e: Exception) {
