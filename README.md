@@ -4,7 +4,7 @@
   <img src="assets/icon.svg" width="128" height="128" alt="Auto Stress Calm Icon">
 </div>
 
-**Your Personal Stress Relief Companion for Wear OS**
+<p align="center"><strong>Your Personal Stress Relief Companion for Wear OS</strong></p>
 
 <div align="center">
 

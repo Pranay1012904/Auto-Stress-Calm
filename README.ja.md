@@ -4,7 +4,7 @@
   <img src="assets/icon.svg" width="128" height="128" alt="自動状態異常回復 アイコン">
 </div>
 
-**Wear OS 向けパーソナル状態回復コンパニオン**
+<p align="center"><strong>Wear OS 向けパーソナル状態回復コンパニオン</strong></p>
 
 <div align="center">
 
