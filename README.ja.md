@@ -39,7 +39,7 @@
 ### ステップ 1：アプリをダウンロード
 
 1. [**リリースページ**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)にアクセス
-2. 最新の **`Auto-Stress-Calm-v1.0.1.apk`** ファイルをコンピューターにダウンロード
+2. 最新の **`v1.0.1.apk`** ファイルをコンピューターにダウンロード
 
 ### ステップ 2：ウォッチにインストール
 
@@ -67,7 +67,7 @@
    .\adb connect 192.168.1.100:5555
    
    # アプリをインストール（APK をダウンロードした場所のパスに置き換える）
-   .\adb install Auto-Stress-Calm-v1.0.1.apk
+   .\adb install v1.0.1.apk
    ```
 
 #### 🍎 Mac/Linux ユーザー向け：
@@ -83,7 +83,7 @@ sudo apt-get install adb
 adb connect 192.168.1.100:5555
 
 # アプリをインストール
-adb install Auto-Stress-Calm-v1.0.1.apk
+adb install v1.0.1.apk
 ```
 
 ### ステップ 3：権限を付与
