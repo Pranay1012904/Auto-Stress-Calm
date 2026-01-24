@@ -1,227 +1,221 @@
-# Auto-Calm - Wear OS Stress Response Haptic Feedback
+# Auto-Calm 🧘
+
+**Your Personal Stress Relief Companion for Wear OS**
 
 <div align="center">
 
-![Auto-Calm Icon](auto_calm/app/src/main/res/drawable/ic_launcher_foreground.xml)
-
-**A resilient Wear OS application that provides gentle haptic breathing guidance in response to stress notifications**
-
-[![Platform](https://img.shields.io/badge/Platform-Wear%20OS-4285F4?style=flat-square&logo=wear-os)](https://wearos.google.com/)
-[![API](https://img.shields.io/badge/API-31%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=31)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg?style=flat-square&logo=kotlin)](https://kotlinlang.org)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
+[![Wear OS](https://img.shields.io/badge/Wear%20OS-5%2F6-4285F4?style=for-the-badge&logo=wear-os)](https://wearos.google.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 </div>
 
 ---
 
-## 📖 Overview
+## 💆 What is Auto-Calm?
 
-**Auto-Calm** is a Wear OS application designed to help users manage stress through gentle haptic feedback. When stress-related notifications are detected (e.g., from Fitbit's Body Response/EDA features), the app triggers a custom 8-second "breathing" haptic pattern on your smartwatch, encouraging mindful breathing and stress relief.
+**Auto-Calm** is a free, open-source app for your Wear OS smartwatch that helps you manage stress in the moment. When your Fitbit detects a stress response (using Body Response/EDA sensors), Auto-Calm automatically starts a gentle 8-second guided breathing session using haptic vibrations on your watch.
 
-### ✨ Key Features
+Think of it as having a mindfulness coach on your wrist, ready to help you breathe and relax whenever stress strikes.
 
-- **🔔 Smart Notification Interception**: Monitors notifications from health apps (Fitbit, etc.) using regex-based channel filtering
-- **💆 Custom Haptic Breathing Pattern**: 8-second gentle vibration sequence (2.5s inhale ramp → 3s pause → 2.5s exhale fade)
-- **🔋 Background Resilience**: Designed as a "zombie" service that persists in the background without being killed by system power management
-- **⚡ Hardware-Optimized**: Uses modern `VibratorManager` API with `USAGE_ALARM` attributes to bypass Wear OS haptic suppression
-- **🎨 Premium Design**: Custom adaptive icons and clean notification UI
+### ✨ Why You'll Love It
+
+- **🎯 Automatic**: No need to remember to breathe - it reminds you when you need it most
+- **💆 Gentle Guidance**: Feel the breathing rhythm through subtle vibrations
+- **🔋 Always Ready**: Runs quietly in the background, no battery drain
+- **🆓 100% Free**: Open source, no ads, no subscriptions, no data collection
+- **🔒 Private**: Everything stays on your watch - your stress data never leaves your device
 
 ---
 
-## 🚀 Quick Start
+## 📲 How to Install
 
-### Prerequisites
+### Step 1: Download the App
 
-- **Wear OS Device**: Physical device running Wear OS 5/6 (API 31+) or emulator
-- **Android Studio**: Latest stable version (Hedgehog or newer)
-- **ADB**: For deployment and testing
+1. Go to the [**Releases Page**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
+2. Download the latest **`Auto-Calm-v1.0.0.apk`** file to your computer
 
-### Installation
+### Step 2: Install on Your Watch
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/auto-calm.git
-   cd auto-calm
-   ```
+You'll need to use ADB (Android Debug Bridge) to install the app. Don't worry - it's easier than it sounds!
 
-2. **Open in Android Studio**:
-   - Open the `auto_calm` folder as a project
-   - Sync Gradle dependencies
+#### 🪟 For Windows Users:
 
-3. **Deploy to device**:
-   ```bash
-   # Via Gradle
-   .\gradlew.bat installDebug
+1. **Enable Developer Mode on your watch**:
+   - On your watch: Settings → System → About → Tap "Build number" 7 times
+   - You'll see "You are now a developer!"
+
+2. **Enable ADB Debugging**:
+   - Settings → Developer options → Turn on "ADB debugging"
+   - Turn on "Debug over Wi-Fi"
+   - Note the IP address shown (e.g., `192.168.1.100:5555`)
+
+3. **Install ADB on your computer**:
+   - Download [Platform Tools](https://developer.android.com/tools/releases/platform-tools) from Google
+   - Extract the zip file to a folder (e.g., `C:\platform-tools`)
+
+4. **Connect and Install**:
+   ```powershell
+   # Open PowerShell in the platform-tools folder
+   # Connect to your watch (replace with your watch's IP)
+   .\adb connect 192.168.1.100:5555
    
-   # Or via ADB (for physical device)
-   adb -s <device_ip> install -r auto_calm/app/build/outputs/apk/debug/app-debug.apk
+   # Install the app (replace path with where you downloaded the APK)
+   .\adb install Auto-Calm-v1.0.0.apk
    ```
 
-4. **Grant Notification Access**:
-   - Open the app on your watch
-   - Follow the onboarding checklist to enable notification access
-   - Settings → Apps → Special app access → Notification access → Auto-Calm
+#### 🍎 For Mac/Linux Users:
 
----
+```bash
+# Install ADB (Mac with Homebrew)
+brew install android-platform-tools
 
-## 🎯 How It Works
+# Or on Linux
+sudo apt-get install adb
 
-### Architecture
+# Connect to your watch
+adb connect 192.168.1.100:5555
 
-```mermaid
-graph LR
-    A[Fitbit App] -->|Stress Notification| B[Wear OS System]
-    B --> C[StressNotificationListener]
-    C -->|Regex Filter| D{Match?}
-    D -->|Yes| E[Acquire WakeLock]
-    E --> F[Trigger Haptic Pattern]
-    F --> G[VibratorManager]
-    G --> H[8s Breathing Vibration]
-    H --> I[Release WakeLock]
-    D -->|No| J[Ignore]
+# Install the app
+adb install Auto-Calm-v1.0.0.apk
 ```
 
-### Notification Filtering
+### Step 3: Grant Permissions
 
-The app uses a **regex-based filter** to catch stress-related notifications:
-- **Package**: `com.fitbit.FitbitMobile` or `com.example.wearnotifications` (test app)
-- **Channel ID Regex**: `(?i).*(body|response|stress|eda).*`
+This is the most important step! The app needs permission to read notifications.
 
-This ensures compatibility even if Fitbit changes channel naming slightly.
+1. **Open Auto-Calm** on your watch
+2. You'll see a checklist - tap **"Open Settings"**
+3. Find **"Auto-Calm"** in the list and toggle it **ON**
+4. Tap **"Allow"** when prompted
+5. Go back to the app - you should see a green checkmark ✅
 
-### Haptic Pattern Details
-
-The 8-second breathing pattern is designed for comfort and effectiveness:
-
-| Phase | Duration | Intensity | Description |
-|-------|----------|-----------|-------------|
-| **Inhale** | 2.5s | 10% → 50% | Smooth ramp-up (amplitude 25 → 127) |
-| **Pause** | 3.0s | 0% | Silent hold |
-| **Exhale** | 2.5s | 50% → 10% | Gentle fade-out (amplitude 127 → 25) |
-
-Implemented with `VibrationEffect.createWaveform()` using 250ms granular steps for smoothness.
+**That's it!** Auto-Calm is now monitoring for stress notifications.
 
 ---
 
-## 🛠️ Technical Details
+## 🎯 How to Use
 
-### Tech Stack
+### Automatic Mode (Recommended)
 
-- **Language**: Kotlin
-- **UI Framework**: Jetpack Compose for Wear OS
-- **Target SDK**: API 35
-- **Min SDK**: API 31 (Wear OS 3.0+)
+Once installed and permissions are granted, Auto-Calm works automatically:
 
-### Key Components
+1. **Wear your Fitbit** and go about your day
+2. When Fitbit detects a stress response, it sends a notification to your watch
+3. **Auto-Calm intercepts this notification** and immediately starts a gentle breathing session
+4. **Feel the vibration pattern**:
+   - 🌬️ **Breathe IN** (2.5 seconds) - vibration gradually increases
+   - 🫁 **Hold** (3 seconds) - gentle pause
+   - 😌 **Breathe OUT** (2.5 seconds) - vibration gradually fades
+5. Repeat as needed throughout the day
 
-#### 1. `StressNotificationListener.kt`
-- Extends `NotificationListenerService`
-- Intercepts and filters notifications
-- Triggers haptic feedback via `VibratorManager`
-- Uses `PowerManager.WakeLock` to ensure full pattern completion
+### Manual Test
 
-#### 2. `MainActivity.kt`
-- Onboarding UI with notification access status
-- "Test Haptics" button for manual testing
-- Built with Jetpack Compose for Wear OS
+Want to try it without waiting for stress?
 
-#### 3. Permissions (`AndroidManifest.xml`)
-```xml
-<uses-permission android:name="android.permission.VIBRATE" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
-<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-```
-
-### Bypassing Wear OS Haptic Suppression
-
-Wear OS aggressively suppresses background vibrations. Auto-Calm overcomes this with:
-
-1. **`VibrationAttributes`** with `USAGE_ALARM` and `FLAG_BYPASS_INTERRUPTION_POLICY`
-2. **`WakeLock`** (`PARTIAL_WAKE_LOCK`) to prevent CPU sleep during the 8s pattern
-3. **Modern `VibratorManager`** API (API 31+) instead of deprecated `Vibrator`
+1. Open the **Auto-Calm** app on your watch
+2. Tap the **"Test Haptics"** button
+3. Feel the 8-second breathing pattern
 
 ---
 
-## 🧪 Testing
+## ❓ Frequently Asked Questions
 
-### Using the ADB Notification Tester
+### Does this work with other fitness trackers?
 
-A companion app (`ADB Notification Tester`) is included for simulating Fitbit notifications:
+Currently, Auto-Calm is designed for **Fitbit** devices that have Body Response/EDA stress detection. However, it can be configured to work with other apps that send stress notifications.
 
-```powershell
-# Send mock stress notification
-adb -s <device_ip> shell am broadcast `
-  -a com.example.wearnotifications.SEND_NOTIFICATION `
-  -n com.example.wearnotifications/.NotificationReceiver `
-  --es title "Body Response Alert" `
-  --es message "High stress detected" `
-  --es channel "body_response"
-```
+### Will this drain my battery?
 
-### Verification Commands
+No! Auto-Calm uses very little battery because it only activates when you receive a stress notification. It's designed to be efficient and runs quietly in the background.
 
-```powershell
-# View app logs
-adb -s <device_ip> logcat -d StressViber:V *:S
+### Is my data being collected?
 
-# Check haptic history (detailed hardware logs)
-adb -s <device_ip> shell dumpsys vibrator_manager
-```
+**Absolutely not.** Auto-Calm is 100% open source and runs entirely on your watch. No data is sent to any servers, and there's no internet connection required.
 
----
+### What if I don't feel the vibration?
 
-## 📱 Screenshots
+Make sure:
+- ✅ You granted notification access permission
+- ✅ Your watch isn't in "Do Not Disturb" mode
+- ✅ Your watch vibration is turned on in Settings
+- ✅ Try the "Test Haptics" button in the app
 
-### App Interface
-![Auto-Calm Main Screen](screenshots/main_screen.png)
+### Can I customize the breathing pattern?
 
-### Notification Icon
-![Notification Icon](auto_calm/app/src/main/res/drawable/ic_notification.xml)
+Not yet, but this is a planned feature! The current 8-second pattern (2.5s in, 3s hold, 2.5s out) is based on proven breathing techniques for stress relief.
+
+### Which watches are supported?
+
+Auto-Calm works on:
+- ✅ Pixel Watch 2 (tested)
+- ✅ Pixel Watch 3
+- ✅ Any Wear OS 5 or 6 device (API 31+)
 
 ---
 
-## 🤝 Contributing
+## 🆘 Troubleshooting
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+### "Notification Access Not Granted" Error
 
-### Development Setup
+1. Go to your watch: **Settings → Apps → Special app access → Notification access**
+2. Find **Auto-Calm** and toggle it **ON**
+3. Restart the Auto-Calm app
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### App Not Responding to Stress Notifications
+
+1. Make sure your **Fitbit app** is installed and working on your watch
+2. Check that Fitbit is sending notifications (test by triggering a stress response)
+3. Open Auto-Calm and verify the green checkmark is showing
+4. Try restarting your watch
+
+### Can't Install via ADB
+
+- Make sure **ADB debugging** is enabled on your watch
+- Verify you're connected: `adb devices` should show your watch
+- Try disconnecting and reconnecting: `adb disconnect` then `adb connect <IP>`
+
+---
+
+## 🤝 Contributing & Support
+
+### Found a Bug?
+
+Please [open an issue](https://github.com/Ethan-Ming/Auto-Stress-Calm/issues) with:
+- Your watch model
+- Wear OS version
+- What happened vs. what you expected
+
+### Want to Help?
+
+This is an open-source project! Contributions are welcome:
+- 🐛 Report bugs
+- 💡 Suggest features
+- 🔧 Submit pull requests
+- ⭐ Star the repo if you find it useful!
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Auto-Calm is free and open source, licensed under the [MIT License](LICENSE).
+
+You're free to use, modify, and share this app. See the license file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## 🙏 Credits
 
-- Built for Wear OS 5/6 (Pixel Watch 2 tested)
-- Designed to work seamlessly with Fitbit's Body Response/EDA stress detection
-- Inspired by mindfulness and stress management best practices
-
----
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-- Open an issue on GitHub
-- Check the [Wiki](../../wiki) for troubleshooting guides
+- Built with ❤️ for anyone dealing with stress
+- Designed to work seamlessly with Fitbit's Body Response/EDA features
+- Inspired by mindfulness and evidence-based breathing techniques
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for stress-free living**
+**Take a deep breath. You've got this.** 🌬️
 
-[Report Bug](../../issues) · [Request Feature](../../issues)
+[⬇️ Download Now](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest) • [📖 Report Issue](https://github.com/Ethan-Ming/Auto-Stress-Calm/issues) • [⭐ Star on GitHub](https://github.com/Ethan-Ming/Auto-Stress-Calm)
 
 </div>
