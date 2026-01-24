@@ -39,7 +39,7 @@
 ### 步骤 1：下载应用
 
 1. 访问 [**发布页面**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
-2. 将最新的 **`Auto-Stress-Calm.apk`** 文件下载到您的计算机
+2. 将最新的 **`Auto-Stress-Calm-v1.0.1.apk`** 文件下载到您的计算机
 
 ### 步骤 2：在手表上安装
 
@@ -67,7 +67,7 @@
    .\adb connect 192.168.1.100:5555
    
    # 安装应用（替换为您下载 APK 的路径）
-   .\adb install Auto-Stress-Calm-v1.0.0.apk
+   .\adb install Auto-Stress-Calm-v1.0.1.apk
    ```
 
 #### 🍎 Mac/Linux 用户：
@@ -83,7 +83,7 @@ sudo apt-get install adb
 adb connect 192.168.1.100:5555
 
 # 安装应用
-adb install Auto-Stress-Calm-v1.0.0.apk
+adb install Auto-Stress-Calm-v1.0.1.apk
 ```
 
 ### 步骤 3：授予权限

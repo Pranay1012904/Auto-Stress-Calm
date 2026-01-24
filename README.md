@@ -39,7 +39,7 @@ Think of it as having a mindfulness coach on your wrist, ready to help you breat
 ### Step 1: Download the App
 
 1. Go to the [**Releases Page**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
-2. Download the latest **`Auto Stress Calm.apk`** file to your computer
+2. Download the latest **`Auto-Stress-Calm-v1.0.1.apk`** file to your computer
 
 ### Step 2: Install on Your Watch
 
@@ -67,7 +67,7 @@ You'll need to use ADB (Android Debug Bridge) to install the app. Don't worry - 
    .\adb connect 192.168.1.100:5555
    
    # Install the app (replace path with where you downloaded the APK)
-   .\adb install Auto Stress Calm-v1.0.0.apk
+   .\adb install Auto-Stress-Calm-v1.0.1.apk
    ```
 
 #### 🍎 For Mac/Linux Users:
@@ -83,7 +83,7 @@ sudo apt-get install adb
 adb connect 192.168.1.100:5555
 
 # Install the app
-adb install Auto Stress Calm-v1.0.0.apk
+adb install Auto-Stress-Calm-v1.0.1.apk
 ```
 
 ### Step 3: Grant Permissions
