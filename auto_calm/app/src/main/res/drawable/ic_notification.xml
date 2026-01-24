@@ -3,7 +3,55 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    
+    <!-- Robot Head -->
+    <path
+        android:fillColor="#80CBC4"
+        android:pathData="M9,6h6c1,0 2,1 2,2v3c0,1 -1,2 -2,2h-6c-1,0 -2,-1 -2,-2v-3c0,-1 1,-2 2,-2z" />
+    
+    <!-- Antenna -->
+    <path
+        android:fillColor="#4DB6AC"
+        android:pathData="M11.5,4h1v2h-1z" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10s10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8s8,3.59 8,8S16.41,20 12,20zM12,7c-2.76,0 -5,2.24 -5,5s2.24,5 5,5s5,-2.24 5,-5S14.76,7 12,7z" />
+        android:pathData="M11.5,3.5c0,-0.3 0.2,-0.5 0.5,-0.5s0.5,0.2 0.5,0.5s-0.2,0.5 -0.5,0.5s-0.5,-0.2 -0.5,-0.5z" />
+    
+    <!-- Closed Eyes -->
+    <path
+        android:fillColor="#4DB6AC"
+        android:pathData="M9.5,8.5h1.5 M13,8.5h1.5"
+        android:strokeWidth="0.5"
+        android:strokeColor="#4DB6AC"
+        android:strokeLineCap="round" />
+    
+    <!-- Smile -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M10,10c0,0 0.5,0.5 2,0.5s2,-0.5 2,-0.5"
+        android:strokeWidth="0.5"
+        android:strokeColor="#4DB6AC"
+        android:strokeLineCap="round" />
+    
+    <!-- Body -->
+    <path
+        android:fillColor="#E0F2F1"
+        android:pathData="M8,13h8c0.5,0 1,0.5 1,1v4c0,0.5 -0.5,1 -1,1h-8c-0.5,0 -1,-0.5 -1,-1v-4c0,-0.5 0.5,-1 1,-1z" />
+    
+    <!-- Body Circle -->
+    <path
+        android:fillColor="#80CBC4"
+        android:pathData="M12,15.5c-0.8,0 -1.5,0.7 -1.5,1.5s0.7,1.5 1.5,1.5s1.5,-0.7 1.5,-1.5s-0.7,-1.5 -1.5,-1.5z" />
+    
+    <!-- Arms in Meditation -->
+    <path
+        android:fillColor="#80CBC4"
+        android:pathData="M7,14c-0.5,0 -1,0.5 -1,1v2c0,0.5 0.5,1 1,1h0.5v-4h-0.5z
+                         M17,14h-0.5v4h0.5c0.5,0 1,-0.5 1,-1v-2c0,-0.5 -0.5,-1 -1,-1z" />
+    
+    <!-- Legs -->
+    <path
+        android:fillColor="#80CBC4"
+        android:pathData="M8,19v1c0,0.5 0.5,1 1,1h2v-2h-3z
+                         M16,19h-3v2h2c0.5,0 1,-0.5 1,-1v-1z" />
 </vector>
