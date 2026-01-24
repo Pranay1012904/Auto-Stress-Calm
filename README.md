@@ -8,6 +8,8 @@
 [![Wear OS](https://img.shields.io/badge/Wear%20OS-5%2F6-4285F4?style=for-the-badge&logo=wear-os)](https://wearos.google.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
+English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
+
 </div>
 
 ---
