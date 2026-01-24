@@ -4,7 +4,7 @@
   <img src="assets/icon.svg" width="128" height="128" alt="Auto Stress Calm Icon">
 </div>
 
-<p align="center"><strong>Your Personal Stress Relief Companion for Wear OS</strong></p>
+<p align="center"><strong>Near-Zero Battery Impact • Automatic Stress Detection & Relief</strong></p>
 
 <div align="center">
 
@@ -24,13 +24,11 @@ English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
 Think of it as having a mindfulness coach on your wrist, ready to help you breathe and relax whenever stress strikes.
 
-### ✨ Why You'll Love It
-
-- **🎯 Automatic**:it reminds you when you need it most
-- **💆 Gentle Guidance**: Feel the breathing rhythm through subtle vibrations
-- **🔋 Always Ready**: Runs quietly in the background, no battery drain
-- **🆓 100% Free**: Open source, no ads, no subscriptions, no data collection
-- **🔒 Private**: Everything stays on your watch - your stress data never leaves your device
+- **🎯 Fully Automatic**: Detects and reminds you when you need it most
+- **🔋 Zero Battery Impact**: Inactive until a stress event occurs - zero idle power drain
+- **💆 Gentle Guidance**: Feel the breathing rhythm through subtle, localized vibrations
+- **🆓 100% Free**: Open source, no ads, no subscriptions, no tracking
+- **🔒 Private**: Fully offline - your biometric data never leaves your watch
 
 ---
 
