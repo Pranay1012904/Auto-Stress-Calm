@@ -34,15 +34,17 @@ class StressNotificationListener : NotificationListenerService() {
         android.util.Log.i(TAG, "StressNotificationListener CONNECTED to system")
     }
 
-    override fun onNotificationPosted(sbn: android.service.notification.StatusBarNotification) {
+    override fun onNotificationPosted(sbn: StatusBarNotification) {
         val packageName = sbn.packageName
         val channelId = sbn.notification.channelId
         
-        android.util.Log.d(TAG, "INBOUND: Pkg=$packageName, Ch=$channelId")
+        Log.d(TAG, "INBOUND: Pkg=$packageName, Ch=$channelId")
 
         if (isStressNotification(packageName, channelId)) {
-            android.util.Log.i(TAG, "MATCH! Stress detected from $packageName ($channelId)")
+            Log.i(TAG, "MATCH! Stress detected from $packageName ($channelId)")
             triggerHaptics()
+        } else {
+            Log.d(TAG, "NO MATCH: $packageName | $channelId")
         }
     }
 

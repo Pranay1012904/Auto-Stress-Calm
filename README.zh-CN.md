@@ -1,5 +1,9 @@
 # Auto Stress Calm 🧘
 
+<div align="center">
+  <img src="assets/icon.png" width="128" height="128" alt="Auto Stress Calm 图标">
+</div>
+
 **您的 Wear OS 个人压力缓解伴侣**
 
 <div align="center">
@@ -35,11 +39,11 @@
 ### 步骤 1：下载应用
 
 1. 访问 [**发布页面**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
-2. 将最新的 **`Auto-Stress-Calm-v1.0.0.apk`** 文件下载到您的计算机
+2. 将最新的 **`Auto-Stress-Calm.apk`** 文件下载到您的计算机
 
 ### 步骤 2：在手表上安装
 
-您需要使用 ADB（Android 调试桥）来安装应用。别担心 - 这比听起来容易！
+您需要使用ADB来安装应用。别担心 - 这比听起来容易！
 
 #### 🪟 Windows 用户：
 

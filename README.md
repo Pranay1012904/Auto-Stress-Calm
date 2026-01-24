@@ -1,5 +1,9 @@
 # Auto Stress Calm 🧘
 
+<div align="center">
+  <img src="assets/icon.png" width="128" height="128" alt="Auto Stress Calm Icon">
+</div>
+
 **Your Personal Stress Relief Companion for Wear OS**
 
 <div align="center">
@@ -22,7 +26,7 @@ Think of it as having a mindfulness coach on your wrist, ready to help you breat
 
 ### ✨ Why You'll Love It
 
-- **🎯 Automatic**: No need to remember to breathe - it reminds you when you need it most
+- **🎯 Automatic**:it reminds you when you need it most
 - **💆 Gentle Guidance**: Feel the breathing rhythm through subtle vibrations
 - **🔋 Always Ready**: Runs quietly in the background, no battery drain
 - **🆓 100% Free**: Open source, no ads, no subscriptions, no data collection
@@ -35,7 +39,7 @@ Think of it as having a mindfulness coach on your wrist, ready to help you breat
 ### Step 1: Download the App
 
 1. Go to the [**Releases Page**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
-2. Download the latest **`Auto Stress Calm-v1.0.0.apk`** file to your computer
+2. Download the latest **`Auto Stress Calm.apk`** file to your computer
 
 ### Step 2: Install on Your Watch
 
