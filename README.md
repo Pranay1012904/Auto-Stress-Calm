@@ -1,4 +1,4 @@
-# Auto-Calm 🧘
+# Auto Stress Calm 🧘
 
 **Your Personal Stress Relief Companion for Wear OS**
 
@@ -12,9 +12,9 @@
 
 ---
 
-## 💆 What is Auto-Calm?
+## 💆 What is Auto Stress Calm?
 
-**Auto-Calm** is a free, open-source app for your Wear OS smartwatch that helps you manage stress in the moment. When your Fitbit detects a stress response (using Body Response/EDA sensors), Auto-Calm automatically starts a gentle 8-second guided breathing session using haptic vibrations on your watch.
+**Auto Stress Calm** is a free, open-source app for your Wear OS smartwatch that helps you manage stress in the moment. When your Fitbit detects a stress response (using Body Response/EDA sensors), Auto Stress Calm automatically starts a gentle 8-second guided breathing session using haptic vibrations on your watch.
 
 Think of it as having a mindfulness coach on your wrist, ready to help you breathe and relax whenever stress strikes.
 
@@ -33,7 +33,7 @@ Think of it as having a mindfulness coach on your wrist, ready to help you breat
 ### Step 1: Download the App
 
 1. Go to the [**Releases Page**](https://github.com/Ethan-Ming/Auto-Stress-Calm/releases/latest)
-2. Download the latest **`Auto-Calm-v1.0.0.apk`** file to your computer
+2. Download the latest **`Auto Stress Calm-v1.0.0.apk`** file to your computer
 
 ### Step 2: Install on Your Watch
 
@@ -61,7 +61,7 @@ You'll need to use ADB (Android Debug Bridge) to install the app. Don't worry - 
    .\adb connect 192.168.1.100:5555
    
    # Install the app (replace path with where you downloaded the APK)
-   .\adb install Auto-Calm-v1.0.0.apk
+   .\adb install Auto Stress Calm-v1.0.0.apk
    ```
 
 #### 🍎 For Mac/Linux Users:
@@ -77,20 +77,20 @@ sudo apt-get install adb
 adb connect 192.168.1.100:5555
 
 # Install the app
-adb install Auto-Calm-v1.0.0.apk
+adb install Auto Stress Calm-v1.0.0.apk
 ```
 
 ### Step 3: Grant Permissions
 
 This is the most important step! The app needs permission to read notifications.
 
-1. **Open Auto-Calm** on your watch
+1. **Open Auto Stress Calm** on your watch
 2. You'll see a checklist - tap **"Open Settings"**
-3. Find **"Auto-Calm"** in the list and toggle it **ON**
+3. Find **"Auto Stress Calm"** in the list and toggle it **ON**
 4. Tap **"Allow"** when prompted
 5. Go back to the app - you should see a green checkmark ✅
 
-**That's it!** Auto-Calm is now monitoring for stress notifications.
+**That's it!** Auto Stress Calm is now monitoring for stress notifications.
 
 ---
 
@@ -98,11 +98,11 @@ This is the most important step! The app needs permission to read notifications.
 
 ### Automatic Mode (Recommended)
 
-Once installed and permissions are granted, Auto-Calm works automatically:
+Once installed and permissions are granted, Auto Stress Calm works automatically:
 
 1. **Wear your Fitbit** and go about your day
 2. When Fitbit detects a stress response, it sends a notification to your watch
-3. **Auto-Calm intercepts this notification** and immediately starts a gentle breathing session
+3. **Auto Stress Calm intercepts this notification** and immediately starts a gentle breathing session
 4. **Feel the vibration pattern**:
    - 🌬️ **Breathe IN** (2.5 seconds) - vibration gradually increases
    - 🫁 **Hold** (3 seconds) - gentle pause
@@ -113,7 +113,7 @@ Once installed and permissions are granted, Auto-Calm works automatically:
 
 Want to try it without waiting for stress?
 
-1. Open the **Auto-Calm** app on your watch
+1. Open the **Auto Stress Calm** app on your watch
 2. Tap the **"Test Haptics"** button
 3. Feel the 8-second breathing pattern
 
@@ -123,15 +123,15 @@ Want to try it without waiting for stress?
 
 ### Does this work with other fitness trackers?
 
-Currently, Auto-Calm is designed for **Fitbit** devices that have Body Response/EDA stress detection. However, it can be configured to work with other apps that send stress notifications.
+Currently, Auto Stress Calm is designed for **Fitbit** devices that have Body Response/EDA stress detection. However, it can be configured to work with other apps that send stress notifications.
 
 ### Will this drain my battery?
 
-No! Auto-Calm uses very little battery because it only activates when you receive a stress notification. It's designed to be efficient and runs quietly in the background.
+No! Auto Stress Calm uses very little battery because it only activates when you receive a stress notification. It's designed to be efficient and runs quietly in the background.
 
 ### Is my data being collected?
 
-**Absolutely not.** Auto-Calm is 100% open source and runs entirely on your watch. No data is sent to any servers, and there's no internet connection required.
+**Absolutely not.** Auto Stress Calm is 100% open source and runs entirely on your watch. No data is sent to any servers, and there's no internet connection required.
 
 ### What if I don't feel the vibration?
 
@@ -147,7 +147,7 @@ Not yet, but this is a planned feature! The current 8-second pattern (2.5s in, 3
 
 ### Which watches are supported?
 
-Auto-Calm works on:
+Auto Stress Calm works on:
 - ✅ Pixel Watch 2 (tested)
 - ✅ Pixel Watch 3
 - ✅ Any Wear OS 5 or 6 device (API 31+)
@@ -159,14 +159,14 @@ Auto-Calm works on:
 ### "Notification Access Not Granted" Error
 
 1. Go to your watch: **Settings → Apps → Special app access → Notification access**
-2. Find **Auto-Calm** and toggle it **ON**
-3. Restart the Auto-Calm app
+2. Find **Auto Stress Calm** and toggle it **ON**
+3. Restart the Auto Stress Calm app
 
 ### App Not Responding to Stress Notifications
 
 1. Make sure your **Fitbit app** is installed and working on your watch
 2. Check that Fitbit is sending notifications (test by triggering a stress response)
-3. Open Auto-Calm and verify the green checkmark is showing
+3. Open Auto Stress Calm and verify the green checkmark is showing
 4. Try restarting your watch
 
 ### Can't Install via ADB
@@ -198,7 +198,7 @@ This is an open-source project! Contributions are welcome:
 
 ## 📄 License
 
-Auto-Calm is free and open source, licensed under the [MIT License](LICENSE).
+Auto Stress Calm is free and open source, licensed under the [MIT License](LICENSE).
 
 You're free to use, modify, and share this app. See the license file for details.
 
