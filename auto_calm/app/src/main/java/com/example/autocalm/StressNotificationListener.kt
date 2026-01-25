@@ -49,15 +49,9 @@ class StressNotificationListener : NotificationListenerService() {
     }
 
     private fun isStressNotification(packageName: String, channelId: String?): Boolean {
-        // Check package name
-        val isFitbit = packagePattern.matcher(packageName).matches()
-        val isMockApp = packageName == "com.example.wearnotifications" || 
-                        packageName == "com.example.adbnotificationtester"
-        val isSelf = packageName == applicationContext.packageName
-
-        if (!isFitbit && !isMockApp && !isSelf) return false
-        
-        // Check channel ID
+        // Source Agnostic Logic: Primarily filter by Channel ID regex
+        // This ensures the app works with Fitbit, mock testers, and any future 
+        // stress-detecting apps as long as they use descriptive channel IDs.
         if (channelId != null && channelPattern.matcher(channelId).matches()) {
             return true
         }
