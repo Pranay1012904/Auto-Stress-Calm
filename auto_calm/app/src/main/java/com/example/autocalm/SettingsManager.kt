@@ -69,8 +69,8 @@ class SettingsManager(context: Context) {
             val timingsArray = timings.toLongArray()
             val amplitudesArray = amplitudes.toIntArray()
 
-            android.util.Log.i("VibrationVerifier", "Generated timings: ${timingsArray.contentToString()}")
-            android.util.Log.i("VibrationVerifier", "Generated amplitudes: ${amplitudesArray.contentToString()}")
+            // android.util.Log.i("VibrationVerifier", "Generated timings: ${timingsArray.contentToString()}")
+            // android.util.Log.i("VibrationVerifier", "Generated amplitudes: ${amplitudesArray.contentToString()}")
 
             return Pair(timingsArray, amplitudesArray)
         }

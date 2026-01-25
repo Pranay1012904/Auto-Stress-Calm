@@ -24,6 +24,8 @@
             </intent-filter>
         </service>
 
+        <!-- Debug Only: ADB Test Interface -->
+        <!--
         <receiver
             android:name=".TestSettingsReceiver"
             android:exported="true">
@@ -32,6 +34,7 @@
                 <action android:name="com.example.autocalm.TRIGGER_VIBRATION" />
             </intent-filter>
         </receiver>
+        -->
 
         <activity
             android:name=".MainActivity"
