@@ -1,4 +1,4 @@
-package com.example.wearnotifications
+package com.example.adbnotificationtester
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -12,7 +12,7 @@ import androidx.core.app.NotificationManagerCompat
 class NotificationReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == "com.example.wearnotifications.POST_NOTIFICATION") {
+        if (intent.action == "com.example.adbnotificationtester.POST_NOTIFICATION") {
             val title = intent.getStringExtra("title") ?: "Default Title"
             val message = intent.getStringExtra("message") ?: "Default Message"
             val channelId = intent.getStringExtra("channel_id") ?: "default_channel"

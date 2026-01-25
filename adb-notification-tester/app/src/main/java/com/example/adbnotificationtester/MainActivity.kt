@@ -1,4 +1,4 @@
-package com.example.wearnotifications
+package com.example.adbnotificationtester
 
 import android.app.Activity
 import android.content.pm.PackageManager
@@ -14,7 +14,7 @@ class MainActivity : Activity() {
         setContentView(R.layout.activity_main)
 
         val textView = findViewById<TextView>(R.id.text)
-        textView.text = "Wear Notification App Running\nWaiting for ADB commands..."
+        textView.text = "ADB Notification Tester Running\nWaiting for commands..."
 
         checkNotificationPermission()
     }

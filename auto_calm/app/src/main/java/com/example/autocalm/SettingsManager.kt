@@ -34,9 +34,9 @@ class SettingsManager(context: Context) {
 
     companion object {
         fun generateWaveform(settings: VibrationSettings): Pair<LongArray, IntArray> {
-            val phaseMs = (settings.segmentDuration * 1000L)
+            val phaseMs = (settings.segmentDuration * 1000L).coerceAtLeast(100L)
             
-            // We use 10 steps for ramp up and ramp down
+            // Stable 10 steps (as in the hard-coded success)
             val steps = 10
             val stepDuration = phaseMs / steps
             
@@ -50,27 +50,35 @@ class SettingsManager(context: Context) {
                 // Inhale (Ramp Up)
                 for (i in 0 until steps) {
                     timings.add(stepDuration)
-                    val amp = minAmp + ((maxAmp - minAmp) * (i.toFloat() / (steps - 1))).toInt()
+                    val progress = i.toFloat() / (steps - 1)
+                    val amp = minAmp + ((maxAmp - minAmp) * progress).toInt()
                     amplitudes.add(amp)
                 }
                 
-                // Pause
+                // Pause (Reverted to SILENCE - as in hard-coded version)
                 timings.add(phaseMs)
                 amplitudes.add(0)
                 
                 // Exhale (Ramp Down)
                 for (i in 0 until steps) {
                     timings.add(stepDuration)
-                    val amp = maxAmp - ((maxAmp - minAmp) * (i.toFloat() / (steps - 1))).toInt()
+                    val progress = i.toFloat() / (steps - 1)
+                    val amp = maxAmp - ((maxAmp - minAmp) * progress).toInt()
                     amplitudes.add(amp)
+                }
+
+                // Inter-cycle Silence (2s) for definitive separation
+                if (settings.repeats > 1) {
+                    timings.add(2000L)
+                    amplitudes.add(0)
                 }
             }
             
             val timingsArray = timings.toLongArray()
             val amplitudesArray = amplitudes.toIntArray()
 
-            // android.util.Log.i("VibrationVerifier", "Generated timings: ${timingsArray.contentToString()}")
-            // android.util.Log.i("VibrationVerifier", "Generated amplitudes: ${amplitudesArray.contentToString()}")
+            android.util.Log.i("VibrationVerifier", "Generated timings: ${timingsArray.contentToString()}")
+            android.util.Log.i("VibrationVerifier", "Generated amplitudes: ${amplitudesArray.contentToString()}")
 
             return Pair(timingsArray, amplitudesArray)
         }

@@ -51,7 +51,8 @@ class StressNotificationListener : NotificationListenerService() {
     private fun isStressNotification(packageName: String, channelId: String?): Boolean {
         // Check package name
         val isFitbit = packagePattern.matcher(packageName).matches()
-        val isMockApp = packageName == "com.example.wearnotifications"
+        val isMockApp = packageName == "com.example.wearnotifications" || 
+                        packageName == "com.example.adbnotificationtester"
         val isSelf = packageName == applicationContext.packageName
 
         if (!isFitbit && !isMockApp && !isSelf) return false
@@ -76,19 +77,21 @@ class StressNotificationListener : NotificationListenerService() {
                 getSystemService(android.content.Context.VIBRATOR_SERVICE) as android.os.Vibrator
             }
 
-            val pm = getSystemService(android.content.Context.POWER_SERVICE) as android.os.PowerManager
-            val wl = pm.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "StressViber:Haptic")
-            wl.acquire(10000L) // 8s pattern + safety
-
             if (vibrator.hasVibrator()) {
                 val settings = SettingsManager(applicationContext).getSettings()
                 val (timings, amplitudes) = SettingsManager.generateWaveform(settings)
                 
+                val totalDuration = timings.sum()
+                val pm = getSystemService(android.content.Context.POWER_SERVICE) as android.os.PowerManager
+                val wl = pm.newWakeLock(android.os.PowerManager.PARTIAL_WAKE_LOCK, "StressViber:Haptic")
+                wl.acquire(totalDuration + 2000L) // Pattern duration + 2s safety
+
                 val effect = android.os.VibrationEffect.createWaveform(timings, amplitudes, -1)
                 val attrs = android.os.VibrationAttributes.Builder()
                     .setUsage(android.os.VibrationAttributes.USAGE_ALARM)
                     .build()
 
+                vibrator.cancel() // Clear any active pattern before starting new one
                 vibrator.vibrate(effect, attrs)
             }
         } catch (e: Exception) {

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.wearnotifications'
+    namespace 'com.example.adbnotificationtester'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.wearnotifications"
+        applicationId "com.example.adbnotificationtester"
         minSdk 30
         targetSdk 34
         versionCode 1

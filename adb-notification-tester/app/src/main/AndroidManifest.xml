@@ -25,7 +25,7 @@
             android:name=".NotificationReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.wearnotifications.POST_NOTIFICATION" />
+                <action android:name="com.example.adbnotificationtester.POST_NOTIFICATION" />
             </intent-filter>
         </receiver>
     </application>

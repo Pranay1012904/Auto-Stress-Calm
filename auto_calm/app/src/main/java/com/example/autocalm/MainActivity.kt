@@ -323,7 +323,7 @@ fun triggerDirectHaptic(context: Context) {
 }
 
 fun sendMockNotification(context: Context) {
-    val channelId = "eda_stress_test"
+    val channelId = "body_response"
     val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
 
     android.util.Log.i("StressViber", "Sending Mock Notification...")
